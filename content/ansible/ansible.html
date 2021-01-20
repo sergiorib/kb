@@ -5,35 +5,130 @@
       <h1 style="text-align:center">Ansible</h1>
  
       <li><a href="#Infogeral" target="ilinks">Informações Gerais</a> </li>
- 
+      <li><a href="#Conceito" target="ilinks">Conceito</a> </li>
+      <li><a href="#Arquitetura" target="ilinks">Arquitetura</a> </li>
+      <li><a href="#Instalação" target="ilinks">Instalação/Atualização/Remoção</a> </li>
+      <li><a href="#Configuração" target="ilinks">Configuração</a> </li>
 
       <a name="Infogeral"></a>
       <h3 style="text-align:left">Informações Gerais</h3>
       <p>
-         <b>Descrição:</b>Ansible é uma solução para automação de provisionamento e gerenciamento  <br/> 
+         <b>Descrição: </b>Ansible é uma solução para automação de provisionamento e gerenciamento  <br/> 
          centralizado de mudanças em um parque de máquinas Linux ou Windows.<br/> 
-         <b>Descrição:</b> Ansible é uma solução para automação de provisionamento e gerenciamento<br/>   
-         centralizado de mudanças em um parque de máquinas Linux ou Windows.<br>   
-         <b>Licença:</b> Open source gratuito/<br> 
-         <b>Categoria:</b> IaC (Infra como Código)<br/> 
-         <b>Responsável:</b> RedHat<br/>                
+         <b>Licença: </b>Open source gratuito/<br> 
+         <b>Categoria: </b>IaC (Infra como Código)<br/> 
+         <b>Empresa: </b>RedHat<br/>
+         <b>Concorrentes: </b>Chef, Puppet, SaltStack, CFEngine, etc.<br/>
+         <b>Diferenciais:</b>
+         <ol>
+            <li>Open Source e gratuita</li>
+            <li>Simlicidade (YAML)</li>
+            <li>Baixa curva de aprendizado</li>
+            <li>Agentless (sem agentes instalados)</li>
+            <li>Recursos poderosos</li>
+         </ol>
       </p>
 
+      <a name="Conceito"></a>
+      <h3 style="text-align:left">Conceito</h3>
+      <p>
+         Ansible se baseia em 4 vertentes, são elas: <br/>
+         <ol>
+            <li><b>Gerenciamento de mudanças</b></li>
+               <ol>
+                  <li>Não pemite que alterações sejam aplicadas duas vezes (Idempotente).</li>
+                  <li>Conhece os estado das máquinas (System State).</li>
+                  <li>Garante as versões corretas das aplicações (corrige se for necessário).</li>
+                  <li>Alerta sobre mudanças ocorridas no ambiente.</li>
+               </ol>
+            <li><b>Provisionamento:</b> Criação (em alguns casos), instalações e configurações de máquinas conforme parametros pré-estabelecidos.</li>
+            <li> <b>Automação </b></li>
+               <ol>
+                  <li>Execução de tarefas de forma automática e ordenada.</li>
+                  <li>Permite estabelecer condições para a execução de determinadas tarefas.</li>
+                  <li>Relalização de tarefas diretamente no prompt do servidor (AD-HOC).</li>
+               </ol>
+            </li>
+            <li><b>Orquestração: </b>Trabalho com multiplos servidores, aplicações, tarefas e ambiente hibrido (varios OS).</li>
+
+         </ol>
+
+         <a name="Arquitetura"></a>
+         <h3 style="text-align:left">Arquitetura</h3> 
+         <img src="img/Ansible_architecture.jpeg" alt="">
+      <b>Ansible Automation Engine</b>
+      <ol>
+         <li><b>Inventory:</b>b> Lista de maquinas (hosts) a serem gerenciadas pelo Ansible.<br/></li>
+         <li><b>API: </b> Interface para execução dos comandos do Ansible.<br/></li>
+         <li><b>Modules: </b>b> Interface para execução dos comandos do Ansible.<br/></li>
+         <li><b>Plugins: </b> Interface para execução dos comandos do Ansible.<br/></li>
+      </ol>
+      <b>Users: </b>Pessoas que vão gerenciar o Ansible.<br/>
+      <b>Playbook: </b>Lista de instruções a serem executadas nos hosts.<br/>           
+      <b>CMDB: </b>Banco que armazena as configurações do ambiente.<br/>
+      <b>Hosts: </b>Maquinas nas quais os playbooks serão aplicados.<br/>
+      <b>Networking: </b>Equipamentos de rede nos quais os playbooks serão aplicados.<br/>
+      <b>Public/Private Cloud: </b>Provedores de infra na nuvem.<br/>
+
+      <a name="Instalação"></a>
+      <h3 style="text-align:left">Instalação/remoção</h3> 
+      <b>Modos de instalação</b>
+      <ol>
+         <li><b>Gerenciador de pacotes Debian (apt)</b><br/>
+            sudo apt get update <br/>
+            sudo apt get upgrade<br/>
+            sudo apt auto-remove<br/>
+            sudo apt install ansible <br/>
+            <b>Remoção: </b>sudo apt remove ansible
+         </li>
+         <li><b>Gerenciador de pacotes RedHat (yum ou dnf)</b> <br/>
+            sudo dnf install ansible 
+         </li>
+         <li><b>Gerenciador de pacotes Python (pip)</b> <br/>
+         sudo pip3 install ansible<br/>
+         <b>Importante: </b> Instalando com o 'pip3' sempre pega a versão mais recente do ansible.  
+         </li>
+      </ol>
+      <b>Ver a versão instalada: </b>ansible --version <br/>
+      <b>Ver a ultima versão disponível:</b> <br\> 
+      <a href="https://docs.ansible.com/ansible/devel/reference_appendices/release_and_maintenance.html" target="ilinks">Ansible releases</a> 
+      <b>Problemas communs de instalação: </b>
+      <ol>
+         <li> Depois de instalado com o pip3 o comando <b>ansible --version</b> exibe a mensagem:<br/>
+             <b><FONT COLOR="Red">-bash: /usr/bin/ansible: No such file or directory</FONT></b><br/>
+            Isto ocorre porque o local onde o ansible foi instalado não está na PATH do SO. <br/>
+            Pra ver onde ele foi instalado use o comando: <b>which ansible</b>  
+         </li>
+      </ol>
+      <b>Atualização: </b> sudo pip3 install ansible --upgrade<br/>
+      <b>Remoção</b> sudo apt auto-remove<br/> 
+      
+      <a name="Configurações"></a>
+      <h3 style="text-align:left">Configurações</h3> 
+      <b>ansible.cfg: </b>Principal arquivo de configuração do Ansible</b><br/>
+      <b>Fica em: </b>/etc/ansible/ansible.cfg</b><br/>
+      <b>Precedencia para interpretação das configurações</b><br/>
+      <ol>
+         <li>Local apontado na variável de ambiente: <b>ANSIBLE_CONFIG </b></li>
+         <li><b>ansible.cfg</b> no diretório corrente</li>
+         <li><b>.ansible.cfg</b> no diretório HOME</li>
+         <li><b>/etc/ansible/ansible.cfg</b></li>
+      </ol>
+      <a href="https://docs.ansible.com/ansible/latest/reference_appendices/config.html" target="ilinks">Documentação do <b>ansible.cfg</b></a> <br/>
+      <br/>
+      <b>Opções importantes para configuração</b><br/>
+      <ol>
+         <li><b>forks: </b> Qtde de processos executado simultaneamente durante um comando Ansible.<br/>
+         Pode ser aumentado para dar mais vazão aos processamentos, dependendo da capacidade da máquina.
+         </li>
+         <li><b>log_path: </b> Local osnde serão gravados os logs od Ansible<br/></li>
+         <li><b>module_name: </b> Modulo default para execução de tasks<br/></li>
+         <li><b>executable: </b> Bash a ser utilizado<br/></li>
+         <li><b>ansible_managed: </b> <br/></li>
+   
+
+
+      </ol>
    </body>
 
 </html>
-
-h3>Informações gerais<h3>
-   <p>    
-
-   </p>
-   </h3>p> 
-
-Diferencial 
-   - Não necessita de agente instalado na máquina cliente pois se comunica através dos 
-   protocolos SSH (linux) ou WinRM (Windows)
-   - 
-
-Funcionamento 
-
-Se baseia em 4 vertentes: 
