@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../../../styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="../../techs/ansible/ansible_overview.html"  target="frame_conteudo">Teste</a>
+  <a href="#">Contact</a>
+</div>
+
+<span style="font-size:15px;cursor:pointer" onclick="openNav()">&#9776;Tópicos</span>
+
+<iframe name="frame_conteudo" src="../../techs/ansible/ansible_overview.html"; frameBorder="0" height=390 width=100%  border:none  style="background-color:grey;position:relative; top: 0px; left: 0px;" > 
+</iframe>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+   
+</body>
+</html> 
