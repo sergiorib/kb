@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <link rel="stylesheet" href="../../../styles.css">
+    </head>
+
+<body">
+
+    <H1>LINUX COMMANDS</H1>
+
+    <a href="#ALIAS">ALIAS</a>
+    <a href="#APT-GET">APT-GET</a>
+    <a href="#APTITUDE">APTITUDE</a>
+    </br>
+    <a href="#BG">BG</a>
+    </br>
+    <a href="#CAT">CAT</a>
+    <a href="#CHAGE">CHAGE</a>
+    <a href="#CHMOD">CHMOD</a>
+    <a href="#CHOWN">CHOWN</a>
+    <a href="#CP">CP</a>
+    <a href="#CRON">CRON</a>
+    <a href="#CUT">CUT</a>
+    </br>
+    <a href="#DATE">DATE</a>
+    <a href="#DF">DF</a>
+    <a href="#DIG">DIG</a>
+    <a href="#DPKG">DPKG</a>
+    <a href="#DU">DU</a>
+    </br>
+    <a href="#EXEC">EXEC</a>
+    <a href="#EXPAND">EXPAND</a>
+    </br>
+    <a href="#FDISK">FDISK</a>
+    <a href="#FILE">FILE</a>
+    <a href="#FIND">FIND</a>
+    <a href="#FMT">FMT</a>
+    <a href="#FOR(LOOP)">FOR(LOOP)</a>
+    <a href="#FREE">FREE</a>
+    <a href="#FSCK">FSCK</a>
+    <a href="#FSTAB">FSTAB</a>
+    </br>
+    <a href="#GETENT">GETENT</a>
+    <a href="#GNUPG">GNUPG</a>
+    </br>
+    <a href="#HEAD">HEAD</a>
+    <a href="#HOST">HOST</a>
+    <a href="#HOSTNAME">HOSTNAME</a>
+    </br>
+    <a href="#ICONV">ICONV</a>
+    <a href="#IFCONFIG">IFCONFIG</a>
+    <a href="#IP">IP</a>
+    </br>
+    <a href="#JOBS">JOBS</a>
+    <a href="#JOIN">JOIN</a>
+    </br>   
+    <a href="#KILALL">KILALL</a>
+    <a href="#KILL">KILL</a>
+    </br> 
+    <a href="#LDCONFIG">LDCONFIG</a>
+    <a href="#LN">LN</a>
+    <a href="#LOCALE">LOCALE</a>
+    <a href="#LOCATE">LOCATE</a>
+    <a href="#LSMOD">LSMOD</a>
+    </br>    
+    <a href="#MAN">MAN</a>
+    <a href="#MKDIR">MKDIR</a>
+    <a href="#MKFS">MKFS</a>
+    <a href="#MOUNT">MOUNT</a>
+    <a href="#MV">MV</a>
+    </br> 
+    <a href="#NETCAT">NETCAT</a>
+    <a href="#NETSTAT">NETSTAT</a>
+    <a href="#NICE">NICE</a>
+    <a href="#NL">NL</a>
+    <a href="#NMAP">NMAP</a>
+    <a href="#NOHUP">NOHUP</a>
+    </br> 
+    <a href="#OD">OD</a>
+    </br> 
+    <a href="#PARTED">PARTED</a>
+    <a href="#PASSWD">PASSWD</a>
+    <a href="#PASTE">PASTE</a>
+    <a href="#PGREP">PGREP</a>
+    <a href="#PING">PING</a>
+    <a href="#PKILL">PKILL</a>
+    <a href="#PR">PR</a>
+    <a href="#PROFILE">PROFILE</a>
+    <a href="#PS">PS</a>
+    <a href="#PSTREE">PSTREE</a>
+    <a href="#PWD">PWD</a>
+    </br> 
+    <a href="#READ">READ</a>
+    <a href="#RM">RM</a>
+    <a href="#RMDIR">RMDIR</a>
+    <a href="#ROUTE">ROUTE</a>
+    <a href="#RPM">RPM</a>
+    <a href="#RUNLEVELS">RUNLEVELS</a>
+    </br> 
+    <a href="#SCREEN">SCREEN</a>
+    <a href="#SED">SED</a>
+    <a href="#SEQ">SEQ</a>
+    <a href="#SET">SET</a>
+    <a href="#SHUTDOWN">SHUTDOWN</a>
+    <a href="#SKEL">SKEL</a>
+    <a href="#SORT">SORT</a>
+    <a href="#SOURCE">SOURCE</a>
+    <a href="#SPLIT">SPLIT</a>
+    <a href="#SUDO">SUDO</a>
+    <a href="#SYSTEMCTL">SYSTEMCTL</a>
+    </br> 
+    <a href="#TAIL">TAIL</a>
+    <a href="#TAR">TAR</a>
+    <a href="#TEE">TEE</a>
+    <a href="#TEST">TEST</a>
+    <a href="#TOP">TOP</a>
+    <a href="#TOUCH">TOUCH</a>
+    <a href="#TR">TR</a>
+    <a href="#TRACEPATH">TRACEPATH</a>
+    <a href="#TRACEROUTE">TRACEROUTE</a>
+    <a href="#TYPE">TYPE</a>
+    <a href="#TZSELECT">TZSELECT</a>
+    </br> 
+    <a href="#ULIMIT">ULIMIT</a>
+    <a href="#UMASK">UMASK</a>
+    <a href="#UNAME">UNAME</a>
+    <a href="#UNIQ">UNIQ</a>
+    <a href="#USERDEL">USERDEL</a>
+    <a href="#USERMOD">USERMOD</a>
+    </br> 
+    <a href="#WALL">WALL</a>
+    <a href="#WC">WC</a>
+    <a href="#WHEREIS">WHEREIS</a>
+    <a href="#WHICH">WHICH</a>
+    <a href="#WHILE">WHILE</a>
+    <a href="#WHO">WHO</a>
+    </br> 
+    <a href="#XARGS">XARGS</a>
+    </br>   
+    <a href="#YUM">YUM</a>
+    </br>     
+     </br> 
+    </br> 
+   
+    <section id ="ALIAS"><h3>ALIAS</h3></section>
+
+    <p>
+
+    <b>Descrição</b><br/> 
+    Permite criar atalhos (apelidos) para comandos do shell do Linux
+    <br/><br/> 
+    <b>Exemplos:</b><br/>
+    alias l="ls -lga" </br>
+    alias k="kubectl"
+    <blockquote>
+        <b>Importante:</b> O alias criado diretamente no prompt do shell só é válido para a sessão corrente. <br/> 
+           Para torná-lo permanente é preciso incluí-lo em um script de carregamento (<b>.bashrc</b>, por exemplo) 
+        </blockquote>
+    </p>
+
+    <section id ="APT-GET">APT-GET</section>
+    <section id ="APTITUDE">APTITUDE</section>
+    <section id ="BG">BG</section>
+    <section id ="CAT">CAT</section>
+    <section id ="CHAGE">CHAGE</section>
+    <section id ="CHMOD">CHMOD</section>
+    <section id ="CHOWN">CHOWN</section>
+    <section id ="CP">CP</section>
+    <section id ="CRON">CRON</section>
+    <section id ="CUT">CUT</section>
+    <section id ="DATE">DATE</section>
+    <section id ="DF">DF</section>
+    <section id ="DIG">DIG</section>
+    <section id ="DPKG">DPKG</section>
+    <section id ="DU">DU</section>
+    <section id ="EXEC">EXEC</section>
+    <section id ="EXPAND">EXPAND</section>
+    <section id ="FDISK">FDISK</section>
+    <section id ="FILE">FILE</section>
+    <section id ="FIND">FIND</section>
+    <section id ="FMT">FMT</section>
+    <section id ="FOR(LOOP)">FOR(LOOP)</section>
+    <section id ="FREE">FREE</section>
+    <section id ="FSCK">FSCK</section>
+    <section id ="FSTAB">FSTAB</section>
+    <section id ="GETENT">GETENT</section>
+    <section id ="GNUPG">GNUPG</section>
+    <section id ="HEAD">HEAD</section>
+    <section id ="HOST">HOST</section>
+    <section id ="HOSTNAME">HOSTNAME</section>
+    <section id ="ICONV">ICONV</section>
+    <section id ="IFCONFIG">IFCONFIG</section>
+    <section id ="IP">IP</section>
+    <section id ="JOBS">JOBS</section>
+    <section id ="JOIN">JOIN</section>
+    <section id ="KILALL">KILALL</section>
+    <section id ="KILL">KILL</section>
+    <section id ="LDCONFIG">LDCONFIG</section>
+    <section id ="LN">LN</section>
+    <section id ="LOCALE">LOCALE</section>
+    <section id ="LOCATE">LOCATE</section>
+    <section id ="LSMOD">LSMOD</section>
+    <section id ="MAN">MAN</section>
+    <section id ="MKDIR">MKDIR</section>
+    <section id ="MKFS">MKFS</section>
+    <section id ="MOUNT">MOUNT</section>
+    <section id ="MV">MV</section>
+    <section id ="NETCAT">NETCAT</section>
+    <section id ="NETSTAT">NETSTAT</section>
+    <section id ="NICE">NICE</section>
+    <section id ="NL">NL</section>
+    <section id ="NMAP">NMAP</section>
+    <section id ="NOHUP">NOHUP</section>
+    <section id ="OD">OD</section>
+    <section id ="PARTED">PARTED</section>
+    <section id ="PASSWD">PASSWD</section>
+    <section id ="PASTE">PASTE</section>
+    <section id ="PGREP">PGREP</section>
+    <section id ="PING">PING</section>
+    <section id ="PKILL">PKILL</section>
+    <section id ="PR">PR</section>
+    <section id ="PROFILE">PROFILE</section>
+    <section id ="PS">PS</section>
+    <section id ="PSTREE">PSTREE</section>
+    <section id ="PWD">PWD</section>
+    <section id ="READ">READ</section>
+    <section id ="RM">RM</section>
+    <section id ="RMDIR">RMDIR</section>
+    <section id ="ROUTE">ROUTE</section>
+    <section id ="RPM">RPM</section>
+    <section id ="RUNLEVELS">RUNLEVELS</section>
+    <section id ="SCREEN">SCREEN</section>
+    <section id ="SED">SED</section>
+    <section id ="SEQ">SEQ</section>
+    <section id ="SET">SET</section>
+    <section id ="SHUTDOWN">SHUTDOWN</section>
+    <section id ="SKEL">SKEL</section>
+    <section id ="SORT">SORT</section>
+    <section id ="SOURCE">SOURCE</section>
+    <section id ="SPLIT">SPLIT</section>
+    <section id ="SUDO">SUDO</section>
+    <section id ="SYSTEMCTL">SYSTEMCTL</section>
+    <section id ="TAIL">TAIL</section>
+    <section id ="TAR">TAR</section>
+    <section id ="TEE">TEE</section>
+    <section id ="TEST">TEST</section>
+    <section id ="TOP">TOP</section>
+    <section id ="TOUCH">TOUCH</section>
+    <section id ="TR">TR</section>
+    <section id ="TRACEPATH">TRACEPATH</section>
+    <section id ="TRACEROUTE">TRACEROUTE</section>
+    <section id ="TYPE">TYPE</section>
+    <section id ="TZSELECT">TZSELECT</section>
+    <section id ="ULIMIT">ULIMIT</section>
+    <section id ="UMASK">UMASK</section>
+    <section id ="UNAME">UNAME</section>
+    <section id ="UNIQ">UNIQ</section>
+    <section id ="USERDEL">USERDEL</section>
+    <section id ="USERMOD">USERMOD</section>
+    <section id ="WALL">WALL</section>
+    <section id ="WC">WC</section>
+    <section id ="WHEREIS">WHEREIS</section>
+    <section id ="WHICH">WHICH</section>
+    <section id ="WHILE">WHILE</section>
+    <section id ="WHO">WHO</section>
+    <section id ="XARGS">XARGS</section>
+    <section id ="YUM">YUM</section>
+    
+
+
+
+    <h1>Texto H1</h1>
+    <h2>Texto H2</h2>
+    <h3>Texto H3</h3>
+    <h4>Texto H4</h4>
+    <h5>Texto H5</h5>
+ 
+    <p>Texto de paragrafo </p>
+
+
+    <h4>Lista desordenada</h4>
+    <ul>
+        <li>Item de lista 1</li>
+        <li>Item de lista 2</li>
+        <li>Item de lista 3</li>
+        <li>Item de lista 4</li>
+    </ul>
+
+
+    <h4>Lista ordenada</h4>
+    <ol>
+        <li>Item de lista 1</li>
+        <li>Item de lista 2</li>
+        <li>Item de lista 3</li>
+        <li>Item de lista 4</li>
+    </ol>
+
+    <h4>Lista de descrição</h4>
+
+    <dl>
+        <li>Description 1 </li>
+        <li>Description 2 </li>
+        <li>Description 3 </li>
+        <li>Description 4 </li>
+    </dl>
+    
+    <small>Texto pequeno</small>
+
+    <p>Este é um exrmplo de texto <mark>destacado</mark> dentro de outro</p>
+
+    <em>This text is emphasized</em><br/>
+    
+    <i>This text is italic</i><br/>
+
+    <b>This text is bold</b><br/>
+
+    <strong>This text is important!</strong>
+
+    <h4>Citação</h4>
+    <blockquote cite="http://www.worldwildlife.org/who/index.html">
+        Este é um exemplo de citação dentro de uma pagina html 
+        ela pode ser utilizada para fazer comentários dentro do texto. 
+        </blockquote>
+
+    <h4>Abreviação</h4>
+    <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+
+</body>
+
+</html>
