@@ -75,7 +75,6 @@ blockquote {
 }
 
 /* *********** Side Menu *********** */
-<style>
 body {
   font-family: "Lato", sans-serif;
 }
@@ -118,15 +117,17 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-</style>
 
 /* *********** Center image *********** */
 
-  .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
+/* *********** Tables *********** */
+table, th, td {
+  border: 1px solid black;
+}

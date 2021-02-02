@@ -9,6 +9,7 @@
     <H1>LINUX COMMANDS</H1>
 
     <a href="#ALIAS">ALIAS</a>
+    <a href="#APT-CACHE">APT-CACHE</a>     
     <a href="#APT-GET">APT-GET</a>
     <a href="#APTITUDE">APTITUDE</a>
     </br>
@@ -25,6 +26,7 @@
     <a href="#DATE">DATE</a>
     <a href="#DF">DF</a>
     <a href="#DIG">DIG</a>
+    <a href="#DO-RELEASE-UPGRADE">DIG</a>
     <a href="#DPKG">DPKG</a>
     <a href="#DU">DU</a>
     </br>
@@ -142,23 +144,217 @@
      </br> 
     </br> 
    
+    <!-- ALIAS -->
     <section id ="ALIAS"><h3>ALIAS</h3></section>
-
     <p>
+        <b>Descrição</b><br/> 
+        Permite criar atalhos (apelidos) para comandos no Shell do Linux
+        <br/><br/> 
+        <b>Sintaxe: </b></br>
+        alias <em>apelido=comando</em>
+        <br/><br/>
+        <b>Exemplos:</b><br/>
+        alias l="ls -lga" </br>
+        alias kg="kubectl get"
+        <br/><br/>
+        <b>Compatibilidade: </b>Debian & RHEL based distros<br/>    
+        <blockquote>
+            <b>Importante:</b> O alias criado diretamente no prompt do shell só é válido para a sessão corrente. <br/> 
+            Para torná-lo permanente é preciso incluí-lo em um script de carregamento (<b>.bashrc</b>, por exemplo) 
+            </blockquote>
+    </p>
+    <!-- APT-CACHE -->
+    <section id ="APT-CACHE"><h3>APT-CACHE</h3></section>
+    <p>
+        <b>Descrição</b><br/> 
+        Permite a instalação e gerenciamento de pacotes de software em distribuições baseadas no Debian.
+        <br/><br/> 
+        <b>Sintaxe: </b></br>
+        apt-get install <em>nome-do-pacote</em><br/> 
+        apt-get <em>update/upgrade/purge/etc...</em> 
+        <br/><br/>
+        <b>Exemplos:</b><br/>
+        alias l="ls -lga" </br>
+        alias kg="kubectl get"
+        <br/><br/>
+        <b>Compatibilidade: </b>Debian & RHEL based distros<br/> 
+        <table>
+            <tr>
+                <th>Comando</th>
+                <th>Descrição</th>
+                <th>Exemplo</th>
+                <th>Observação</th>
+            </tr>
+            <tr> 
+                <td>pkgnames</td>
+                <td>Mostra a lista de todos os pacotes disponíveis</td>
+                <td><em>apt-cache pkgnames</em</td>
+                <td>Para filtrar use: apt-cache pkgnames nome_pacote</td>
+            </tr>
+            <tr> 
+                <td>search</td>
+                <td>Mostra o nome e a descrição do pacote</td>
+                <td><em>apt-cache search nome_pacote</em</td>
+                <td></td>
+            </tr>
+            <tr> 
+                <td>show</td>
+                <td>Mostra todas as infomações do pacote</td>
+                <td><em>apt-cache show nome_pacote</em</td>
+                <td></td>
+            </tr>
+            <tr> 
+                <td>showpkg</td>
+                <td>Mostra as dependencias de um pacote específico</td>
+                <td><em>apt-cache showpkg nome_pacote</em</td>
+                <td></td>
+            </tr>
+            <tr> 
+                <td>stats</td>
+                <td>Mostra estatisticas do cache</td>
+                <td><em>apt-cache stats</em</td>
+                <td></td>
+            </tr>
 
-    <b>Descrição</b><br/> 
-    Permite criar atalhos (apelidos) para comandos do shell do Linux
-    <br/><br/> 
-    <b>Exemplos:</b><br/>
-    alias l="ls -lga" </br>
-    alias k="kubectl"
-    <blockquote>
-        <b>Importante:</b> O alias criado diretamente no prompt do shell só é válido para a sessão corrente. <br/> 
-           Para torná-lo permanente é preciso incluí-lo em um script de carregamento (<b>.bashrc</b>, por exemplo) 
-        </blockquote>
+        </table>
+
+    <!-- APT-GET -->
+    <section id ="APT-GET"><h3>APT-GET</h3></section>
+    <p>
+        <b>Descrição</b><br/> 
+        Permite a instalação e gerenciamento de pacotes de software em distribuições baseadas no Debian.
+        <br/><br/> 
+        <b>Sintaxe: </b></br>
+        apt-get install <em>nome-do-pacote</em><br/> 
+        apt-get <em>update/upgrade/purge/etc...</em> 
+        <br/><br/>
+        <b>Exemplos:</b><br/>
+        alias l="ls -lga" </br>
+        alias kg="kubectl get"
+        <br/><br/>
+        <b>Compatibilidade: </b>Debian & RHEL based distros<br/>    
+
+        <table>
+            <tr>
+                <th>Comando</th>
+                <th>Descrição</th>
+                <th>Exemplo</th>
+                <th>Observação</th>
+            </tr>
+            <tr> 
+                <td>update</td>
+                <td>Atualiza a lista de pacotes disponíveis</td>
+                <td><em>apt-get update</em> ou <em>apt update</em</td>
+                <td></td>
+            </tr>
+            <tr> 
+                <td>upgrade</td>
+                <td>Atualiza as versões dos pacotes disponiveis</td>
+                <td><em>apt-get upgrade</em> ou <em>apt upgrade</em</td>
+                <td>Atualiza o que tem uma nova versão disponível para a plataforma, como definido em /etc/apt/sources.list ou em /etc/apt/sources.list.d/.</td>
+            </tr>
+            <tr> 
+                <td>Install</td>
+                <td>Instala o sofware referente ao pacote solicitado</td>
+                <td><em>apt-get install nginx</em> ou <em>apt install nome_pacote</em></td>
+                <td></td>
+            </tr>
+            <tr> 
+                <td>remove</td>
+                <td>Remove pacotes da lista de disponíveis</td>
+                <td><em>apt-get remove nginx</em> ou <em>apt remove nome_pacote</em></td>
+                <td><strong>Deixa os arquivos de configuração no sistema</strong></td>
+            </tr>
+            <tr> 
+                <td>autoremove</td>
+                <td>Remove os pacotes que não estão em uso da lista de disponíveis</td>
+                <td><em>apt-get autoremove</em> ou <em>apt autoremove</em></td>
+                <td><strong>Deixa os arquivos de configuração no sistema</strong></td>
+            </tr>
+            <tr> 
+                <td>purge</td>
+                <td>Remove o pacote solicitado da lista de disponíveis e seus arquivo de configuração</td>
+                <td><em>apt-get purge nginx</em> ou <em>apt purge nome_pacote </em></td>
+                    <td>
+                        <strong>Remove também os arquivos de configuração dos pacotes</strong><br/>
+                        <strong>Também pode ser usado assim: apt-get remove --purge nome_pacote </strong><br/>                        
+                    </td>                    
+            </tr>
+            <tr> 
+                <td>source</td>
+                <td>Baixa o codigo fonte do pacote solicitado</td>
+                <td><em>apt-get source nome_pacote</em</td>
+                <td>
+                    <em>O pacote não aparecerá na lista de disponíveis</em><br/>
+                    <em>É comum ocorrer o erro: <strong>You must put some ‘source’ URIs in your sources.list</strong></em><br/>
+                    <em>Neste caso é preciso localizar a URL para o arquivo "deb-src" do pacote e </em><br/>
+                    <em>incluir ela no arquivo /etc/apt/sources.list </em><br/>
+                    <a href="https://techoverflow.net/2018/05/03/how-to-fix-apt-get-source-you-must-put-some-source-uris-in-your-sources-list/"  target="_blank">Link para troubleshooting </a><br/>
+                    <a href="https://www.nginx.com/resources/wiki/start/topics/tutorials/install/"  target="_blank">Exemplo (NGINX) </a><br/>
+                    Para fazer download, desempacotamento e build do pacote use: <b>sudo apt-get --compile source goaccess</b>
+                </td>
+            </tr>
+            <tr> 
+                <td>build-dep </td>
+                <td>Instala as dependencias de build do repositorio solicitado</td>
+                <td><em>apt-get build-dep nome_pacote</em</td>
+                <td>Resolve dependencias de "build-time", as de "runtime" são resolvidas pelo comando "Install"</td>
+            </tr>
+            <tr> 
+                <td>dist-upgrade</td>
+                <td> Atualiza a lista de pacotes de forma integigente, removendo e/ou instalando o que for necessário pra atualizar</td>
+                <td>apt-get dist-upgrade</td>
+                <td><em>apt-get upgrade não remove pacotes, já o dist-upgrade remove, se for necessário para atualizar</em</td>
+            </tr>
+            <tr> 
+                <td>dselect-upgrade</td>
+                <td>remove os pacotes que não estão na lista e instala tudo que estiver nela</td>
+                <td><em>apt-get dselect-upgrade</em</td>
+                <td>É mto util pra instalar pacotes que estão em uma máquina em outra.<br/>
+                É necessário fazer o 'backup' da lista da máquina original antes: <br/>
+                <b>dpkg --get-selection > packages.list</b> <br/>
+                E aplicá-lo na nova: <br/>
+                <b>apt-get dselect-upgrade</b>
+                </td>
+            </tr>
+            <tr> 
+                <td>autoclean</td>
+                <td> Remove os arquivos de pacotes (.deb) que não podem mais ser baixados (versões antigas…) e são completamente inúteis e obsoletos.</td>
+                <td><em>apt-get autoclean</em</td>
+                <td></td>
+            </tr>
+            <tr> 
+                <td>clean</td>
+                <td> apt-get clean</td>
+                <td><em>Limpa os arquivos baixados para instalação dos pacotes</em</td>
+                <td>
+                    Ótimo para economizar espaço eliminando arquivos de instalação que não estão mais sendo utilizados<br/>
+                    Interessante utilizar em <b>Dockerfiles</b> pra diminuir o tamanho da imagem</td><br/>
+                    Esta opção vai além do <b>autoclean</b> pois limpa também os arquivos .DEB. 
+                    Para ver o espaço utilizado pelos pacotes .DEB use: <b>sudo du -sh /var/cache/apt/archives</b>
+                </td>
+            </tr>
+            <tr> 
+                <td>check</td>
+                <td> Verifica se não há dependencias quebradas e atualiza o cache de pacotes</td>
+                <td><em>apt-get check</em</td>
+                <td>Ferramenta para diagnóstico da integridade dos pacotes instalados</td>
+            </tr>
+            <tr> 
+                <td>changelog</td>
+                <td>Mostra o log de alterações e a versão atual do pacote selecionado</td>
+                <td><em>apt-get changelog nome_pacote</em</td>
+                <td></td>
+            </tr>
+            <tr> 
+                <td>download</td>
+                <td> Faz o download de um pacote sem instalá-lo</td>
+                <td><em>apt-get download nome_pacote</em</td>
+                <td></td>
+            </tr>
+        </table>
     </p>
 
-    <section id ="APT-GET">APT-GET</section>
     <section id ="APTITUDE">APTITUDE</section>
     <section id ="BG">BG</section>
     <section id ="CAT">CAT</section>
@@ -171,6 +367,7 @@
     <section id ="DATE">DATE</section>
     <section id ="DF">DF</section>
     <section id ="DIG">DIG</section>
+    <section id ="DO-RELEASE-UPGRADE">DIG</section>
     <section id ="DPKG">DPKG</section>
     <section id ="DU">DU</section>
     <section id ="EXEC">EXEC</section>
